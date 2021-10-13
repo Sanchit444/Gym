@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <style>
+      #center {
+        display: inline;
+        /* justify-content: center;
+        align-items:center;
+        flex-direction: column; */
+        position: relative;
+        left: 500px;
+        top: 10px;
+      }
+      body{
+       background-color: #d0ebe7; 
+      }
+      /* #card{
+        display: block;
+        background-color: aqua;
+      } */
+      .san {
+        display: block;
+        background-color: aqua;
+      }
+    </style>
+    <title>BMI</title>
+  </head>
+  <body>
+    
+    <br /><br /><br />
+    <h2><center> BMI Calculator</center></h2>
+    <form action="">
+      &nbsp;&nbsp; Weight: <br />
+      <div class="input-group mb-3">
+        <!-- <span class="input-group-text" id="inputGroup-sizing-default">Default</span> -->
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          placeholder="Enter your weight in Kg"
+          id="weight"
+          required
+        />
+      </div>
+      <br />
+      &nbsp;&nbsp; Height: <br />
+      <div class="input-group mb-3" >
+        <!-- <span class="input-group-text" id="inputGroup-sizing-default">Default</span> -->
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          placeholder="Enter your height in Ft."
+          id="height"
+          required
+        />
+      </div>
+      <br />
+      &nbsp;&nbsp; BMI Value: <br />
+      <div class="input-group mb-3">
+         <!-- <span class="input-group-text" id="inputGroup-sizing-default">Default</span> -->
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+          
+          id="newbmi"
+        />
+      </div>
+      <br />
+      <button type="button" class="btn btn-success" onclick="getbmivalue()">
+        Check BMI
+      </button>
+    </form>
+    <script>
+      function getbmivalue() {
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+        height = height * 12;
+        height = height * 0.025;
+        var bmi = weight / (height * height);
+        bmi = bmi.toFixed(2);
+        document.getElementById('newbmi').value = bmi;
+      }
+    
+    </script>
+    <h4>
+  <center> Healthy BMI range is from between 18.5 and 24.9</center></h4>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"
+  ></script>
+</html>
